@@ -1,12 +1,14 @@
-import React, { Component } from 'react'
-import { Counter,Buttons } from './components'
-export default class App extends Component {
-  render() {
+import React, { Component, useState } from 'react'
+import Buttons from './components/Buttons'
+import Counter from './components/Counter'
+
+function App() {
+  const [count,setCount]=useState(0)
     return (
       <div>
-        <Counter/>
-        <Buttons/>
+      <Counter count={count}/>
+      <Buttons count={count} setCount={setCount}/>
       </div>
     )
   }
-}
+export default App
